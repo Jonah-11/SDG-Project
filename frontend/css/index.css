@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    background-color: #91a77f;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+/* Header Styles */
+header {
+    background-color: #2c3e50; /* Dark Blue for header */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between; /* Space between logo/title and navigation */
+    align-items: center;
+    padding: 10px 20px; /* Added padding for better spacing */
+}
+
+.logo {
+    display: flex; /* Use flexbox for logo and title */
+    align-items: center; /* Center vertically */
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px; /* Space between logo and title */
+}
+
+.site-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #f39c12; /* Golden text color */
+    margin: 0;
+}
+
+nav {
+    margin-left: auto; /* Push the nav to the right */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 15px; /* Space between navigation items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Golden color on hover */
+}
+
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    padding: 60px 0;
+    text-align: center;
+    color: #f39c12; /* Changed text color for better contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Position for overlay */
+}
+
+.hero:after { /* Adding a dark overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.5); /* Semi-transparent overlay */
+    border-radius: 8px;
+    z-index: 1; /* Make sure the overlay is on top */
+}
+
+.welcome-message, .description {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Bring text above the overlay */
+}
+
+/* Rounded Box for Sections */
+.rounded-box {
+    background-color: #fff; /* White background for contrast */
+    border-radius: 8px; /* Rounded edges */
+    padding: 20px; /* Add some padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin: 20px 0; /* Margin between boxes */
+}
+
+/* Quote Section */
+.quote-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+.quote {
+    font-size: 18px;
+    font-style: italic;
+    margin-right: 15px;
+    color: #2c3e50;
+}
+
+.einstein-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+    text-align: center; /* Center text for small screens */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Space between sections evenly */
+    padding: 0 10%; /* Padding to create space from edges */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.footer-section {
+    flex: 1; /* Allow equal spacing */
+    min-width: 200px; /* Minimum width for better layout */
+    padding: 10px; /* Padding between footer sections */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: add shadow for visual separation */
+    border-radius: 8px; /* Optional: rounded edges for the footer sections */
+    background-color: rgba(44, 62, 80, 0.9); /* Slightly transparent background for visibility */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Stack "Follow Us On" and icons vertically */
+    align-items: center; /* Center the heading */
+    margin-top: 10px;
+}
+
+.icon-container {
+    display: flex; /* Align icons in a row */
+    justify-content: center; /* Center icons horizontally */
+    margin-top: 5px; /* Space between heading and icons */
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 15px; /* Spacing between icons */
+    font-size: 30px; /* Enlarged icons */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-icons a:hover {
+    color: #f39c12; /* Color change on hover */
+    transform: scale(1.2); /* Slightly enlarge icons on hover */
+}
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.welcome-message {
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out; /* Ensure this is correctly applied */
+}
+

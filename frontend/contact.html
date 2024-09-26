@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sustainable Manufacturing</title>
+    <link rel="stylesheet" href="css/contact.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page">
+    <header>
+        <div class="container1">
+            <div class="logo">
+                <a href="#"><img src="./images/logo.jpg" alt="Logo" height="50"/></a>
+                <h3 class="ha">EcoMech Innovations</h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="innovation.html">Innovations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="learn-more.html">Learn More</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <h2>
+            Get in Touch 
+            <i class="fas fa-phone phone-icon ringing"></i>
+        </h2>
+        <div class="contact-image">
+            <img src="images/contact.jpg" alt="Contact Us" width="500">
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="cta-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="clearfix">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>We are committed to advancing sustainable practices in the field of mechanical engineering. Join us in exploring the future of eco-friendly production methods.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@ecomechinnovations.com<br>Phone: +254 799 610782</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <h4>Follow Us On:</h4>
+            <div class="icon-container">
+                <a href="https://twitter.com/knightdale38085" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100080257234206" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/+254799610782" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/jonathan-edwards-147541318/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 By Jonathan Edwards | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Gather form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            // Send the form data to the server
+            fetch('http://localhost:3001/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset(); // Reset the form
+                } else {
+                    alert('Failed to send message.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error sending message.');
+            });
+        });
+    </script>
+</body>
+</html>
